@@ -1,0 +1,804 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body {
+  font-family: roboto;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+.more {
+  display: none; /* Initially hide the extra text */
+}
+
+.content-wrapper.expanded .more {
+  display: block; /* Show the extra text on click */
+}
+
+.body-ul {
+  list-style: disc outside;
+  text-align: left;
+  padding-left: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* #sidebar ul {
+  list-style: none;
+} */
+
+.p-bold {
+  font-weight: bold;
+  /* color: rgb(30 58 138); */
+}
+
+.modal a {
+  /* line-height: 50px; */
+  font-style: italic;
+  color: darkblue;
+}
+
+.modal a:hover {
+  color: rgb(41, 98, 255);
+}
+
+.my-logo {
+  width: 40px;
+}
+.header-font {
+  font-family: montserrat;
+}
+.middle-line {
+  color: rgb(53, 109, 206);
+  font-weight: 800;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.hamburger-line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#hamburger.open .line1 {
+  transform: rotate(45deg) translate(3px, -4px);
+}
+
+#hamburger.open .line2 {
+  opacity: 0;
+}
+
+#hamburger.open .line3 {
+  transform: rotate(-45deg) translate(-14px, -3px);
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.my-pic {
+  position: relative;
+
+  z-index: 1;
+  animation: 1s ease-out 0s 1 opacity;
+}
+
+.circle-graphic-hero {
+  position: absolute;
+  /* z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  background: linear-gradient(
+    45deg,
+    rgb(21, 44, 107),
+    rgb(60, 115, 200),
+    rgb(17, 39, 99),
+    rgb(60, 115, 200)
+  );
+}
+
+@keyframes graphicSlideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes graphicSlideOutFromTop {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+.graphicSlideInFromBottom {
+  animation: graphicSlideInFromBottom 0.5s ease-out forwards;
+}
+
+.graphicSlideOutFromTop {
+  animation: graphicSlideOutFromTop 0.5s ease-out forwards;
+}
+
+.text-hello {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px; /* Adjust as needed */
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  bottom: 0;
+  left: 0;
+  background-color: rgb(122, 122, 122); /* Color of the underline */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  visibility: visible;
+  width: 100%;
+}
+
+#sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.hire-link {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgb(21, 44, 107),
+    rgb(60, 115, 200),
+    rgb(17, 39, 99),
+    rgb(60, 115, 200),
+    rgb(21, 44, 107)
+  );
+  background-size: 400% 400%;
+  animation: moveGradient 2.7s linear infinite;
+  transition: background-color 0.1s ease;
+  z-index: 0;
+
+  /* Other styles... */
+}
+
+.hire-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(72, 136, 231);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit; /* Match the border-radius of the button */
+  z-index: -2;
+}
+
+.hire-link:hover::after {
+  opacity: 1;
+}
+
+.circle-graphic {
+  background: linear-gradient(
+    45deg,
+    rgb(21, 44, 107),
+    rgb(60, 115, 200),
+    rgb(17, 39, 99),
+    rgb(60, 115, 200)
+  );
+}
+
+.progress-bar {
+  background-color: #dfdfdf; /* Light gray background */
+}
+
+.progress {
+  background-color: rgb(59 130 246); /* Blue progress bar */
+  width: 0; /* Initialize with no width */
+  transition: width 1s; /* Smooth transition for the bar */
+}
+
+table {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+.stars {
+  display: inline-flex;
+  color: rgb(59 130 246);
+  transition: all 0.1s ease;
+}
+
+.stars-5 {
+  display: inline-flex;
+  color: rgb(246, 212, 59);
+  transition: all 0.1s ease;
+}
+
+.stars .fas.fa-star {
+  color: rgb(229, 229, 229); /* Different color for empty stars */
+}
+
+.fa-star {
+  margin-right: 4px; /* Space between stars */
+  transition: all 0.1s ease;
+}
+
+.table-row:hover .stars,
+.table-row:hover .stars-5 {
+  transform: scale(1.2);
+}
+
+#software-proficiency table {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#software-proficiency table.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.table-row {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s; /* Add initial delay for rows */
+}
+
+.table-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  overflow: hidden; /* For rounded corner effect */
+}
+
+.animated-table th,
+.animated-table td {
+  text-align: center;
+  padding: 12px 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  width: 50%;
+}
+
+.animated-table th {
+  background-color: rgb(30 58 138); /* Dark header background */
+  color: white;
+}
+
+.animated-table tr {
+  background-color: #ffffff;
+}
+
+.animated-table tr:hover {
+  background-color: #f7fafc; /* Light color on hover */
+}
+
+/* ///////////////////////////////// */
+
+.card {
+  position: relative;
+  width: 384px;
+  height: 432px;
+  overflow: hidden;
+  transition: width 0.3s ease; /* Added transition */
+  margin: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background-color: rgb(229, 231, 235);
+  cursor: pointer;
+}
+
+.card-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  height: 60%;
+  transition: filter 0.3s ease;
+  filter: brightness(50%);
+}
+
+.card-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .card-image {
+  filter: brightness(100%);
+}
+
+.card-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+  width: auto;
+  height: auto;
+  margin: 0 10px 0 10px;
+  transition: all 0.3s ease;
+}
+
+.card-title {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  height: 30px;
+  transform: translateY(50px);
+  transform-origin: center;
+  vertical-align: bottom;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-title {
+  color: rgb(30, 58, 138);
+  transform: translateY(0px);
+}
+
+.card-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  color: rgb(48, 48, 48);
+  width: auto;
+  height: 60px;
+  transform: translateY(75px);
+  opacity: 0;
+  font-size: 15px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-p {
+  transform: translateY(-8px);
+  opacity: 1;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  opacity: 0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  transform: translateY(125px);
+}
+
+.card:hover .btn-container {
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+.btn-container button {
+  padding: 10px 20px;
+  background-color: rgb(30, 58, 138);
+  border: none;
+  border-radius: 5px;
+  opacity: 1;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.card:hover button {
+  opacity: 1;
+}
+
+.btn-container button:hover {
+  background-color: rgb(96, 151, 245);
+}
+
+.card-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2%;
+  transform: translateX(-500px);
+  background-color: rgb(30, 58, 138);
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-bottom {
+  transform: translateX(0px);
+}
+
+/* ///////////////////////////////// */
+
+@media (max-width: 768px) {
+  .portfolio-card-mobile {
+    max-width: none;
+    margin: 15px 0;
+  }
+  .portfolio-info,
+  .view-project {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .mySwiper,
+  .slider {
+    display: none; /* Hide Swiper on larger screens */
+  }
+}
+
+/* Media Query for Mobile Screens */
+@media only screen and (max-width: 769px) {
+  .dynamic-bg {
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0; /* Start hidden, show when in view */
+  }
+
+  #portfolio {
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Default solid color */
+  }
+
+  #portfolio .container,
+  #portfolio h2,
+  #portfolio .portfolio-card-mobile {
+    position: relative;
+    z-index: 1; /* Above the blurred background */
+  }
+
+  .slider {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* other styles... */
+  }
+
+  .portfolio-card-mobile {
+    flex: 0 0 auto;
+    height: 400px;
+    width: 80%;
+    margin: 10px;
+    scroll-snap-align: center;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* other styles... */
+  }
+
+  .image-container img {
+    width: auto;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+  }
+
+  .portfolio-card-mobile.in-view .image-container img {
+    transform: scale(1.3); /* Adjust scale value for desired zoom level */
+  }
+
+  .description-mobile {
+    position: absolute;
+    bottom: -100%; /* Initially hidden */
+    left: 0;
+    width: 100%;
+    height: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    transition: bottom 0.5s ease; /* Smooth slide-up animation */
+  }
+
+  .portfolio-card-mobile.in-view .description-mobile {
+    bottom: 0px; /* Slides up to cover the bottom part of the image */
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+.animate-fadeOutDown {
+  animation: fadeOutDown 0.1s ease-out forwards;
+}
+
+/* ///////////////////////////////// */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Start from the bottom of the screen */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Modal background */
+.modal-background {
+  position: relative;
+  z-index: 101;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+  backdrop-filter: blur(5px);
+}
+
+.modal-open .modal-background {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  backdrop-filter: blur(5px); /* Blur effect when modal is open */
+}
+
+/* Modal content */
+.modal-content {
+  z-index: 102;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 20%;
+  right: 20%;
+  /* padding: 20px; */
+  /* width: 1000px; */
+  max-width: 80%;
+  /* height: 800px;  */
+  /* transform: translate(-50%, -50%); */
+  /* margin: 0 auto;  */
+  /* background-color: blue; */
+  animation: slideUpModal 0.2s forwards; /* Apply animation to slide up the modal */
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+/* Close button */
+.close {
+  z-index: 101;
+  position: absolute;
+  top: -33px;
+  right: -33px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  object-position: center;
+  color: white;
+  /* background-color: white; */
+  cursor: pointer;
+  /* border: 2px solid white; */
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  margin: 0px;
+  padding: 0;
+  transform: translate(0%, 0%);
+}
+
+/* Project container */
+.project-container {
+  z-index: 103;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: white;
+  border-radius: 7px;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  scrollbar-width: thin; /* "auto" can also be used */
+  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0);
+}
+
+.project-container::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
+  margin-right: 15px;
+}
+
+.project-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust color as needed */
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(59 130 246);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portfolio-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.project-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 16px;
+  margin-bottom: 19px;
+}
+
+.project-container p {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.project-container hr {
+  height: 1px;
+  border-width: 0;
+  color: gray;
+  background-color: rgb(219, 219, 219);
+}
+
+.project-thumbnail {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.project-thumbnail img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/*.project-details {
+  /*max-height: 80vh; /* Maximum height for modal content */
+/* overflow-y: auto;  */
+/*}
+
+/* Styles for project details (title, video, photos, description, etc.) */
+.project-detail {
+  margin-bottom: 20px;
+}
+
+.project-detail video,
+.project-detail img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mobile-view {
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 0.5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUpModal {
+  from {
+    opacity: 0;
+
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownModal {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+.tag {
+  color: #333;
+  border-radius: 20px;
+  margin: 10px 10px 0 0;
+  width: 100px;
+  border-color: rgb(189, 189, 189);
+  border-width: 1px;
+  padding: 3px;
+}
+
+.tags {
+  margin-top: auto; /* Push tags to the bottom */
+  display: flex; /* Use flexbox for the tags container */
+  flex-wrap: wrap;
+  font-size: 14px;
+}
